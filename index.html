@@ -46,6 +46,19 @@
         ul li {
             margin-bottom: 0.5rem;
         }
+        .more-details {
+            display: none;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .show-more {
+            cursor: pointer;
+            color: #007BFF;
+            text-decoration: underline;
+        }
         footer {
             text-align: center;
             padding: 1rem 0;
@@ -76,9 +89,42 @@
     <section>
         <h2 class="section-title">Experience</h2>
         <ul>
-            <li><strong>Marsbridge Capital (2022 - Present):</strong> Algorithmic trading frameworks, time-series analysis.</li>
-            <li><strong>EPFC Asset Management (2021 - 2022):</strong> Portfolio risk analysis, ML implementation.</li>
-            <li><strong>Plat.ai (2020 - 2021):</strong> Developed and monitored ML models for real-time predictions.</li>
+            <li>
+                <strong>Marsbridge Capital (2022 - Present):</strong> Algorithmic trading frameworks, time-series analysis.
+                <span class="show-more">Show more</span>
+                <div class="more-details">
+                    <ul>
+                        <li>Developed a robust algorithmic trading framework integrating data cleaning, feature engineering, and optimization.</li>
+                        <li>Created interactive dashboards for market trends and performance metrics.</li>
+                        <li>Performed advanced time-series analysis on crypto and currency exchange data to predict trends.</li>
+                        <li>Automated reporting to reduce manual work and enable faster responses.</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <strong>EPFC Asset Management (2021 - 2022):</strong> Portfolio risk analysis, ML implementation.
+                <span class="show-more">Show more</span>
+                <div class="more-details">
+                    <ul>
+                        <li>Researched and implemented ML models for asset management and portfolio optimization.</li>
+                        <li>Conducted time-series analysis of international bonds and assessed portfolio risks.</li>
+                        <li>Developed models for market simulation and risk analysis.</li>
+                        <li>Adopted cutting-edge tools to streamline workflows and derive deeper insights.</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <strong>Plat.ai (2020 - 2021):</strong> Developed and monitored ML models for real-time predictions.
+                <span class="show-more">Show more</span>
+                <div class="more-details">
+                    <ul>
+                        <li>Designed ML models for real-time logistics predictions, enhancing operational efficiency.</li>
+                        <li>Implemented monitoring systems for production-level ML models to detect performance issues.</li>
+                        <li>Translated complex technical insights into actionable business strategies.</li>
+                        <li>Built custom visualization tools for easy understanding of ML outcomes.</li>
+                    </ul>
+                </div>
+            </li>
         </ul>
     </section>
 
@@ -115,5 +161,20 @@
     <footer>
         <p>&copy; 2024 Nairi Baghdasaryan. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('.show-more').forEach(button => {
+            button.addEventListener('click', () => {
+                const details = button.nextElementSibling;
+                if (details.style.display === 'block') {
+                    details.style.display = 'none';
+                    button.textContent = 'Show more';
+                } else {
+                    details.style.display = 'block';
+                    button.textContent = 'Show less';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
